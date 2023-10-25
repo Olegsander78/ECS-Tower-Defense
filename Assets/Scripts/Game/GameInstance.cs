@@ -9,6 +9,8 @@ public class GameInstance : MonoBehaviour
     private void Awake()
     {
         Application.targetFrameRate = GameConstants.GameFrameRate;
+
+        LoadScene(GameConstants.FirstSceneIndex);
     }
 
     public void LoadScene(int sceneIndex)
