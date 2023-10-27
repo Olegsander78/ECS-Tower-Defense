@@ -18,7 +18,7 @@ public class FPSCounter : MonoBehaviour
         {
             _timer = 0f;
             var fps = Mathf.FloorToInt(1.0f / deltaTime);
-        
+
             _textField.text = $"FPS: {fps.ToString()}";
         }
     }
