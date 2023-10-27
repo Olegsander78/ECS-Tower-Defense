@@ -1,30 +1,44 @@
+using Game.Screens;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameInstance : MonoBehaviour
+namespace Game
 {
-    [field: SerializeField] public GameConstants GameConstants { get; private set; }
-
-    private void Awake()
+    public class GameInstance : MonoBehaviour
     {
-        Application.targetFrameRate = GameConstants.GameFrameRate;
+        [field: SerializeField] public GameConstants GameConstants { get; private set; }
 
-        LoadScene(GameConstants.FirstSceneIndex);
-    }
+        [SerializeField] private LoadingScreen _loadingScreen;
 
-    public void LoadScene(int sceneIndex)
-    {
-        StartCoroutine(LoadSceneAsync(sceneIndex));
-    }
-
-    private IEnumerator LoadSceneAsync(int sceneIndex)
-    {
-        AsyncOperation loadSceneSync = SceneManager.LoadSceneAsync(sceneIndex);
-
-        while (loadSceneSync.isDone == false)
+        private void Awake()
         {
-            yield return null;
+            DontDestroyOnLoad(gameObject);
+
+            Application.targetFrameRate = GameConstants.GameFrameRate;
+
+            LoadScene(GameConstants.FirstSceneIndex);
+        }
+
+        public void LoadScene(int sceneIndex)
+        {
+            StartCoroutine(LoadSceneAsync(sceneIndex));
+        }
+
+        private IEnumerator LoadSceneAsync(int sceneIndex)
+        {
+            _loadingScreen.Show();
+
+            AsyncOperation loadSceneSync = SceneManager.LoadSceneAsync(sceneIndex);
+
+            while (loadSceneSync.isDone == false)
+            {
+                yield return null;
+
+                _loadingScreen.UpdateProgressText(loadSceneSync.progress);
+            }
+
+            _loadingScreen.Hide();
         }
     }
 }
