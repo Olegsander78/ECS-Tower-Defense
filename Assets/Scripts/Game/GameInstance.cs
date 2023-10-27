@@ -1,4 +1,5 @@
 using Game.Screens;
+using Levels;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -37,6 +38,9 @@ namespace Game
 
                 _loadingScreen.UpdateProgressText(loadSceneSync.progress);
             }
+
+            BaseLevelInstance levelInstance = FindObjectOfType<BaseLevelInstance>();
+            levelInstance?.Init(this);
 
             _loadingScreen.Hide();
         }
