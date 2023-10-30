@@ -15,9 +15,6 @@ namespace Services.Builders
         public virtual EntityBuilder GetBuilder()
         {
             return new EntityBuilder(this);
-        }
-
-
-        
+        }        
     }
 }
