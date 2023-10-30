@@ -32,15 +32,15 @@ namespace Services.Builders
 
             entityView.Init(World, in Entity);
 
-            ref var Description = ref Entity.Get<EntityDescription_Component>();
-            Description.Name = _config.Name;
-            Description.Description = _config.Description;
-            Description.Avatar = _config.Avatar;
+            ref var description = ref Entity.Get<EntityDescription_Component>();
+            description.Name = _config.Name;
+            description.Description = _config.Description;
+            description.Avatar = _config.Avatar;
         }
 
-        public EcsEntity GetResult()
+        public ref EcsEntity GetResult()
         {
-            return Entity;
+            return ref Entity;
         }
     }
 }
