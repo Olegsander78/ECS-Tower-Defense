@@ -1,7 +1,7 @@
+using ECS.Systems;
 using Game;
 using Leopotam.Ecs;
-using System.Collections;
-using System.Collections.Generic;
+using Services.Builders.Entities;
 using UnityEngine;
 
 namespace Levels
@@ -9,6 +9,8 @@ namespace Levels
     public class LevelInstance : BaseLevelInstance
     {
         [SerializeField] private LevelServices _levelServices;
+
+        public UnitConfig UnitConfig;
 
         private EcsWorld _world;
         private EcsSystems _updateSystems;
@@ -18,11 +20,21 @@ namespace Levels
         private void Update()
         {
             _updateSystems?.Run();
+
+            //if (Input.GetKeyDown(KeyCode.W))
+            //{
+            //    var builder = UnitConfig.GetBuilder();
+
+            //    builder.SetWorld(_world);
+            //    builder.SetSpawnPosition(Vector3.zero);
+            //    builder.SetSpawnRotation(Quaternion.identity);
+            //    builder.Make();
+            //}
         }
 
         private void FixedUpdate()
         {
-            _fixedUpdateSystems?.Init();            
+            _fixedUpdateSystems?.Run();
         }
 
         private void LateUpdate()
@@ -40,9 +52,11 @@ namespace Levels
 
             CreatingSystems();
 
+            //_fixedUpdateSystems.Add(new ShowDescription_System());
+
             _updateSystems.Init();
-            //_fixedUpdateSystems.Init();
-            //_lateUpdateSystems.Init();
+            _fixedUpdateSystems.Init();
+            _lateUpdateSystems.Init();
         }
 
         private void CreatingSystems()

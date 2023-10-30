@@ -1,6 +1,5 @@
 ﻿using Leopotam.Ecs;
 using Services.ServiceManager;
-using System.Collections;
 using UnityEngine;
 
 namespace Levels
@@ -15,7 +14,7 @@ namespace Levels
 
             InjectServicesToSceneObjects();
         }
-        
+
         public ServiceLocator GetServiceLocator() => _serviceLocator;
 
         private void InjectServicesToSceneObjects()

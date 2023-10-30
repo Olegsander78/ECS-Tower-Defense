@@ -1,6 +1,4 @@
 using Leopotam.Ecs;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Logics.Views
@@ -9,10 +7,12 @@ namespace Logics.Views
     {
         [field: SerializeField] public Transform SelfTransform { get; private set; }
 
+        private EcsWorld _world;
         private EcsEntity _entity;
 
         public void Init(EcsWorld world, in EcsEntity entity)
         {
+            _world = world;
             _entity = entity;
         }
     }

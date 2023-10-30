@@ -1,5 +1,4 @@
 ﻿using Logics.Views;
-using System.Collections;
 using UnityEngine;
 
 namespace Services.Builders
@@ -10,11 +9,11 @@ namespace Services.Builders
         [field: SerializeField] public string Description { get; private set; }
         [field: SerializeField] public Sprite Avatar { get; private set; }
 
-        [field: SerializeField] public EntityView EntityPrefab { get; private set; } 
-        
+        [field: SerializeField] public EntityView EntityPrefab { get; private set; }
+
         public virtual EntityBuilder GetBuilder()
         {
             return new EntityBuilder(this);
-        }        
+        }
     }
 }

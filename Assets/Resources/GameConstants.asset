@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GameConstants
   m_EditorClassIdentifier: 
   <GameFrameRate>k__BackingField: 144
-  <FirstSceneIndex>k__BackingField: 1
+  <FirstSceneIndex>k__BackingField: 2
