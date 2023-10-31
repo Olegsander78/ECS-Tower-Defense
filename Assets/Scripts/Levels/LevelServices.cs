@@ -1,4 +1,5 @@
 ﻿using Leopotam.Ecs;
+using Logics.Waves;
 using Services.Factory;
 using Services.ServiceManager;
 using UnityEngine;
@@ -7,6 +8,8 @@ namespace Levels
 {
     public class LevelServices : MonoBehaviour
     {
+        [SerializeField] private WaveStorage _waveStorage;
+
         private ServiceLocator _serviceLocator;
         private EntityFactory _entityFactory;
 
@@ -16,7 +19,9 @@ namespace Levels
 
             _entityFactory = new EntityFactory(world, _serviceLocator);
 
-            _serviceLocator.RegisterService<IEntityFactory>(_entityFactory);
+            _serviceLocator
+                .RegisterService<IEntityFactory>(_entityFactory)
+                .RegisterService<WaveStorage>(_waveStorage);
 
             InjectServicesToSceneObjects();
         }

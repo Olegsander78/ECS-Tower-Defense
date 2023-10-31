@@ -1,7 +1,5 @@
 using ECS.Components;
 using Leopotam.Ecs;
-using Unity.VisualScripting;
-using UnityEngine;
 
 namespace ECS.Systems
 {
