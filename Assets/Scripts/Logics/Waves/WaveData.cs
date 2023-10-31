@@ -10,6 +10,16 @@ namespace Logics.Waves
         public float IntervalSpawn;
         public UnitConfig[] UnitConfigs;
 
-        public static WaveData Emty = new();
+        public static WaveData Empty = new();
+
+        public static bool operator ==(in WaveData lhs, in WaveData rhs)
+        {
+            return lhs.Title == rhs.Title;
+        }
+
+        public static bool operator !=(in WaveData lhs, in WaveData rhs)
+        {
+            return lhs.Title != rhs.Title;
+        }
     }
 }

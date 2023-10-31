@@ -1,3 +1,6 @@
+using ECS.Components;
+using Leopotam.Ecs;
+
 namespace Services.Builders.Entities
 {
     public class UnitBuilder : EntityBuilder
@@ -10,7 +13,7 @@ namespace Services.Builders.Entities
         {
             base.Make();
 
-
+            Entity.Get<Movement_Component>();
         }
     }
 }

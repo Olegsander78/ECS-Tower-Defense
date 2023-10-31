@@ -827,6 +827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1372753f959eb4baafe99c838e45e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <IntervalWaveTimer>k__BackingField: 3
   _waveDatas:
   - Title: Wave 1
     IntervalSpawn: 0.4

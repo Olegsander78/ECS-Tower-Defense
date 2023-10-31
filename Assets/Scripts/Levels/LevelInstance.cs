@@ -1,6 +1,7 @@
+using ECS.Systems;
+using ECS.Systems.Init;
 using Game;
 using Leopotam.Ecs;
-using Services.Builders.Entities;
 using UnityEngine;
 
 namespace Levels
@@ -9,7 +10,7 @@ namespace Levels
     {
         [SerializeField] private LevelServices _levelServices;
 
-        public UnitConfig UnitConfig;
+        //public UnitConfig UnitConfig;
 
         private EcsWorld _world;
         private EcsSystems _updateSystems;
@@ -51,6 +52,9 @@ namespace Levels
 
             CreatingSystems();
 
+            _updateSystems
+                .Add(new WaveInit_System(_levelServices.GetServiceLocator()))
+                .Add(new WaveSystem(_levelServices.GetServiceLocator()));
             //_fixedUpdateSystems.Add(new ShowDescription_System());
 
             _updateSystems.Init();
