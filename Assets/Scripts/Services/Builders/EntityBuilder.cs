@@ -11,6 +11,7 @@ namespace Services.Builders
 
         protected EcsWorld World;
         protected EcsEntity Entity;
+        protected EntityView EntityView;
 
         private Vector3 _spawnPosition;
         private Quaternion _spawnRotation;
@@ -28,9 +29,9 @@ namespace Services.Builders
         public virtual void Make()
         {
             Entity = World.NewEntity();
-            EntityView entityView = Object.Instantiate(_config.EntityPrefab, _spawnPosition, _spawnRotation);
+            EntityView = Object.Instantiate(_config.EntityPrefab, _spawnPosition, _spawnRotation);
 
-            entityView.Init(World, in Entity);
+            EntityView.Init(World, in Entity);
 
             ref var description = ref Entity.Get<EntityDescription_Component>();
             description.Name = _config.Name;

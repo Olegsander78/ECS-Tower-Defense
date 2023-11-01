@@ -14,12 +14,12 @@ namespace ECS.Systems
         private EcsFilter<Movement_Component> _movementFilter;
 
         private readonly WavesStorage _waveStorage;
-        private readonly EntityFactory _entityFactory;
+        private readonly IEntityFactory _entityFactory;
 
         public WaveSystem(IServiceLocator serviceLocator)
         {
             _waveStorage = serviceLocator.GetService<WavesStorage>();
-            _entityFactory = serviceLocator.GetService<EntityFactory>();
+            _entityFactory = serviceLocator.GetService<IEntityFactory>();
         }
 
         public void Run()

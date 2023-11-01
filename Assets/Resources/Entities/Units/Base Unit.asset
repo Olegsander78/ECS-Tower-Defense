@@ -16,3 +16,4 @@ MonoBehaviour:
   <Description>k__BackingField: Description for base unit
   <Avatar>k__BackingField: {fileID: 21300000, guid: a1e1d33f11358f8408db36cc9a3bea9b, type: 3}
   <EntityPrefab>k__BackingField: {fileID: 4429213028845341275, guid: 96356e7d8927d9548b62ab4a32d2c2ef, type: 3}
+  <MoveSpeed>k__BackingField: 1

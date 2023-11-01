@@ -12,7 +12,7 @@ namespace Services.Storages
 
         public ref WaveData GetWaveDataAt(int index)
         {
-            if (_waveDatas.Length < index)
+            if (index < _waveDatas.Length)
             {
                 return ref _waveDatas[index];
             }

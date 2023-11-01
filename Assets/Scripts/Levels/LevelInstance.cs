@@ -13,6 +13,8 @@ namespace Levels
         //public UnitConfig UnitConfig;
 
         private EcsWorld _world;
+
+        private EcsSystems _initSystems;
         private EcsSystems _updateSystems;
         private EcsSystems _lateUpdateSystems;
         private EcsSystems _fixedUpdateSystems;
@@ -52,11 +54,16 @@ namespace Levels
 
             CreatingSystems();
 
+            _initSystems
+                .Add(new WaveInit_System(_levelServices.GetServiceLocator()));
+
             _updateSystems
-                .Add(new WaveInit_System(_levelServices.GetServiceLocator()))
-                .Add(new WaveSystem(_levelServices.GetServiceLocator()));
+                .Add(new WaveSystem(_levelServices.GetServiceLocator()))
+                .Add(new Movement_System(_levelServices.GetServiceLocator()));
+
             //_fixedUpdateSystems.Add(new ShowDescription_System());
 
+            _initSystems.Init();
             _updateSystems.Init();
             _fixedUpdateSystems.Init();
             _lateUpdateSystems.Init();
@@ -64,6 +71,7 @@ namespace Levels
 
         private void CreatingSystems()
         {
+            _initSystems = new EcsSystems(_world);
             _updateSystems = new EcsSystems(_world);
             _lateUpdateSystems = new EcsSystems(_world);
             _fixedUpdateSystems = new EcsSystems(_world);
