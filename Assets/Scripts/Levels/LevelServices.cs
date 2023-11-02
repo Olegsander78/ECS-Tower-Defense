@@ -1,5 +1,6 @@
 ﻿using Leopotam.Ecs;
 using Services.Factory;
+using Services.PlayerInput;
 using Services.ServiceManager;
 using Services.Storages;
 using UnityEngine;
@@ -13,15 +14,18 @@ namespace Levels
 
         private ServiceLocator _serviceLocator;
         private EntityFactory _entityFactory;
+        private IInputHandler _inputHandler;
 
         public void Init(EcsWorld world)
         {
             _serviceLocator = new ServiceLocator();
 
             _entityFactory = new EntityFactory(world, _serviceLocator);
+            _inputHandler = new InputHandler();
 
             _serviceLocator
                 .RegisterService<IEntityFactory>(_entityFactory)
+                .RegisterService<IInputHandler>(_inputHandler)
                 .RegisterService<WavesStorage>(_waveStorage)
                 .RegisterService<PathStorage>(_pathStorage);
 

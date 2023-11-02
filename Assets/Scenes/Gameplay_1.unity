@@ -306,6 +306,7 @@ GameObject:
   - component: {fileID: 1195972777}
   - component: {fileID: 1195972776}
   - component: {fileID: 1195972775}
+  - component: {fileID: 1195972778}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -387,6 +388,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 65, y: 0, z: 0}
+--- !u!114 &1195972778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195972774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468f6730e21086f40b221be9e3e1372c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _raycastDistance: 12
+  _minDistanceToMove: 0.01
+  _sensitivity: 1
+  _camera: {fileID: 1195972776}
+  _rootTransform: {fileID: 1195972777}
 --- !u!1 &1242920408
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,28 +671,30 @@ MonoBehaviour:
   - Title: Wave 2
     IntervalSpawn: 2
     UnitConfigs:
+    - {fileID: 11400000, guid: 40458a12aa7f2814297ff72a2598de1d, type: 2}
     - {fileID: 11400000, guid: b8fd04db9206fa348bcc2b0b61df7462, type: 2}
-    - {fileID: 11400000, guid: b8fd04db9206fa348bcc2b0b61df7462, type: 2}
-    - {fileID: 11400000, guid: b8fd04db9206fa348bcc2b0b61df7462, type: 2}
+    - {fileID: 11400000, guid: 40458a12aa7f2814297ff72a2598de1d, type: 2}
+    - {fileID: 11400000, guid: 40458a12aa7f2814297ff72a2598de1d, type: 2}
   - Title: Wave 3
     IntervalSpawn: 2
     UnitConfigs:
     - {fileID: 11400000, guid: b8fd04db9206fa348bcc2b0b61df7462, type: 2}
     - {fileID: 11400000, guid: b8fd04db9206fa348bcc2b0b61df7462, type: 2}
-    - {fileID: 11400000, guid: b8fd04db9206fa348bcc2b0b61df7462, type: 2}
+    - {fileID: 11400000, guid: 40458a12aa7f2814297ff72a2598de1d, type: 2}
   - Title: Wave 4
     IntervalSpawn: 2
     UnitConfigs:
-    - {fileID: 11400000, guid: b8fd04db9206fa348bcc2b0b61df7462, type: 2}
-    - {fileID: 11400000, guid: b8fd04db9206fa348bcc2b0b61df7462, type: 2}
-    - {fileID: 11400000, guid: b8fd04db9206fa348bcc2b0b61df7462, type: 2}
+    - {fileID: 11400000, guid: 40458a12aa7f2814297ff72a2598de1d, type: 2}
+    - {fileID: 11400000, guid: 40458a12aa7f2814297ff72a2598de1d, type: 2}
+    - {fileID: 11400000, guid: 40458a12aa7f2814297ff72a2598de1d, type: 2}
   - Title: Wave 5
     IntervalSpawn: 2
     UnitConfigs:
-    - {fileID: 11400000, guid: b8fd04db9206fa348bcc2b0b61df7462, type: 2}
-    - {fileID: 11400000, guid: b8fd04db9206fa348bcc2b0b61df7462, type: 2}
-    - {fileID: 11400000, guid: b8fd04db9206fa348bcc2b0b61df7462, type: 2}
-    - {fileID: 11400000, guid: b8fd04db9206fa348bcc2b0b61df7462, type: 2}
+    - {fileID: 11400000, guid: 40458a12aa7f2814297ff72a2598de1d, type: 2}
+    - {fileID: 11400000, guid: 40458a12aa7f2814297ff72a2598de1d, type: 2}
+    - {fileID: 11400000, guid: 40458a12aa7f2814297ff72a2598de1d, type: 2}
+    - {fileID: 11400000, guid: 40458a12aa7f2814297ff72a2598de1d, type: 2}
+    - {fileID: 11400000, guid: 40458a12aa7f2814297ff72a2598de1d, type: 2}
 --- !u!1 &1387350055
 GameObject:
   m_ObjectHideFlags: 0

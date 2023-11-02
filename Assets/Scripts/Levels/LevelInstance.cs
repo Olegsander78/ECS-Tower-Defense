@@ -1,3 +1,4 @@
+using ECS.Marks;
 using ECS.Systems;
 using ECS.Systems.Init;
 using Game;
@@ -58,10 +59,12 @@ namespace Levels
                 .Add(new WaveInit_System(_levelServices.GetServiceLocator()));
 
             _updateSystems
-                .Add(new WaveSystem(_levelServices.GetServiceLocator()))
-                .Add(new Movement_System(_levelServices.GetServiceLocator()));
+                .Add(new Wave_System(_levelServices.GetServiceLocator()))
+                .Add(new Movement_System(_levelServices.GetServiceLocator()))
+                .Add(new EntityDestroy_System());
 
-            //_fixedUpdateSystems.Add(new ShowDescription_System());
+            _updateSystems
+                .OneFrame<EntityDestroy_Mark>();
 
             _initSystems.Init();
             _updateSystems.Init();

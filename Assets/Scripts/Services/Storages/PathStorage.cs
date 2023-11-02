@@ -12,6 +12,13 @@ namespace Services.Storages
             return _pathCreator.path.GetPointAtDistance(travaledTime);
         }
 
+        public bool IsEndTravaledDistance(float travaledTime)
+        {
+            return travaledTime >= _pathCreator.path.length;
+        }
+
+        public float GetPathLength() => _pathCreator.path.length;
+
         public Quaternion GetTravaledRotation(float travaledTime)
         {
             return _pathCreator.path.GetRotationAtDistance(travaledTime);

@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace ECS.Systems
 {
-    public class WaveSystem : IEcsRunSystem
+    public class Wave_System : IEcsRunSystem
     {
         private EcsFilter<Wave_Component> _wavesFilter;
         private EcsFilter<Movement_Component> _movementFilter;
@@ -16,7 +16,7 @@ namespace ECS.Systems
         private readonly WavesStorage _waveStorage;
         private readonly IEntityFactory _entityFactory;
 
-        public WaveSystem(IServiceLocator serviceLocator)
+        public Wave_System(IServiceLocator serviceLocator)
         {
             _waveStorage = serviceLocator.GetService<WavesStorage>();
             _entityFactory = serviceLocator.GetService<IEntityFactory>();
@@ -63,13 +63,14 @@ namespace ECS.Systems
                             }
                             else
                             {
-                                if(_movementFilter.GetEntitiesCount() == 0)
+                                if (_movementFilter.GetEntitiesCount() == 0)
                                 {
                                     waveComponent.IndexWave++;
+                                    waveComponent.IndexUnit = 0;
                                     waveComponent.IntervalWaveTimer = _waveStorage.IntervalWaveTimer;
                                     waveComponent.IntervalUnitTimer = 0f;
                                     waveComponent.WaveData = WaveData.Empty;
-                                }                                
+                                }
                             }
                         }
                         else
