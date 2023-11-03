@@ -3,6 +3,7 @@ using ECS.Systems;
 using ECS.Systems.Init;
 using Game;
 using Leopotam.Ecs;
+using Services.Events;
 using UnityEngine;
 
 namespace Levels
@@ -70,6 +71,7 @@ namespace Levels
             _updateSystems.Init();
             _fixedUpdateSystems.Init();
             _lateUpdateSystems.Init();
+            
         }
 
         private void CreatingSystems()
