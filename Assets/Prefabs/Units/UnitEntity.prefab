@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3165870712378969859}
-  - component: {fileID: 4429213028845341275}
   - component: {fileID: 1178666851050940197}
+  - component: {fileID: 4039175669576773520}
   m_Layer: 0
   m_Name: UnitEntity
   m_TagString: Untagged
@@ -34,19 +34,6 @@ Transform:
   - {fileID: 398796056611107265}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4429213028845341275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480709748973154996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afa31a663e35921418eeccad39408b9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <SelfTransform>k__BackingField: {fileID: 3165870712378969859}
 --- !u!136 &1178666851050940197
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -70,6 +57,19 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.75, z: 0}
+--- !u!114 &4039175669576773520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480709748973154996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92a639a08eee45b42b134cce6e4ff8e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <SelfTransform>k__BackingField: {fileID: 3165870712378969859}
 --- !u!1 &4561776203122035155
 GameObject:
   m_ObjectHideFlags: 0
